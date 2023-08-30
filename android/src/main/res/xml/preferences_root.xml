@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/appearance">
+
+        <Preference
+            app:key="navigation_appearance_prefs"
+            app:title="@string/appearance_settings"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/generator">
+
+        <ListPreference
+            app:key="generator_language"
+            android:title="@string/language"
+            app:useSimpleSummaryProvider="true"
+            app:defaultValue="en"/>
+
+        <ListPreference
+            app:key="generator_url"
+            android:title="@string/generator_url"
+            app:entries="@array/generator_urls"
+            app:entryValues="@array/generator_url_values"
+            app:defaultValue="main"
+            app:useSimpleSummaryProvider="true"/>
+
+        <Preference
+            app:key="eig_status_page"
+            android:title="@string/eig_status_page"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/insult_of_the_day">
+
+        <Preference
+            app:key="iotd_explanation"
+            android:title="@string/explanation"/>
+
+        <SwitchPreferenceCompat
+            app:key="iotd_master_switch"
+            android:title="@string/enabled"
+            app:defaultValue="false"/>
+
+        <com.sixtyninefourtwenty.custompreferences.TimePickerPreference
+            app:key="iotd_time"
+            android:title="@string/pick_time"
+            app:icon="@drawable/schedule"
+            app:tpp_useSimpleSummaryProvider="true"
+            app:dependency="iotd_master_switch"
+            app:defaultValue="09:00"/>
+
+        <MultiSelectListPreference
+            app:key="iotd_constraints"
+            android:title="@string/constraints"
+            app:entries="@array/work_manager_constraints"
+            app:entryValues="@array/work_manager_constraints_values"
+            app:dependency="iotd_master_switch" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/periodic_insult_updates">
+
+        <EditTextPreference
+            app:key="number_of_insults_updated_periodically"
+            android:title="@string/number_of_insults_updated"
+            android:dialogTitle="@string/number_of_insults_updated"
+            app:defaultValue="0"
+            app:useSimpleSummaryProvider="true"/>
+
+        <ListPreference
+            app:key="update_insults_periodically_interval"
+            android:title="@string/update_interval"
+            app:entryValues="@array/update_intervals_values"
+            app:defaultValue="1h"
+            app:useSimpleSummaryProvider="true"/>
+
+        <MultiSelectListPreference
+            app:key="update_insults_periodically_constraints"
+            android:title="@string/constraints"
+            app:entries="@array/work_manager_constraints"
+            app:entryValues="@array/work_manager_constraints_values" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

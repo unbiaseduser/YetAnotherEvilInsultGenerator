@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/navigation_generator">
+
+    <fragment
+        android:id="@+id/navigation_generator"
+        android:name="com.sixtyninefourtwenty.yetanotherevilinsultgenerator.ui.generator.GeneratorFragment"
+        android:label="@string/generator"
+        tools:layout="@layout/fragment_generator">
+        <action
+            android:id="@+id/action_navigation_generator_to_navigation_insult_info"
+            app:destination="@id/navigation_insult_info" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_offline"
+        android:name="com.sixtyninefourtwenty.yetanotherevilinsultgenerator.ui.offline.OfflineFragment"
+        android:label="@string/offline"
+        tools:layout="@layout/fragment_offline">
+        <action
+            android:id="@+id/action_navigation_offline_to_navigation_filter_insults"
+            app:destination="@id/navigation_filter_insults" />
+        <action
+            android:id="@+id/action_navigation_offline_to_navigation_sort_insults"
+            app:destination="@id/navigation_sort_insults" />
+        <action
+            android:id="@+id/action_navigation_offline_to_navigation_insult_info"
+            app:destination="@id/navigation_insult_info" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.sixtyninefourtwenty.yetanotherevilinsultgenerator.ui.settings.SettingsFragment"
+        android:label="@string/settings">
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_appearance_settings"
+            app:destination="@id/navigation_appearance_settings"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_appearance_settings"
+        android:name="com.sixtyninefourtwenty.theming.preferences.ThemingPreferenceFragment"
+        android:label="@string/appearance_settings"/>
+
+    <dialog
+        android:id="@+id/navigation_filter_insults"
+        android:name="com.sixtyninefourtwenty.yetanotherevilinsultgenerator.ui.filterinsults.FilterInsultsDialog"
+        tools:layout="@layout/dialog_filter_insults"/>
+
+    <dialog
+        android:id="@+id/navigation_sort_insults"
+        android:name="com.sixtyninefourtwenty.yetanotherevilinsultgenerator.ui.sortinsults.SortInsultsDialog"
+        tools:layout="@layout/dialog_sort_insults" />
+    <dialog
+        android:id="@+id/navigation_insult_info"
+        android:name="com.sixtyninefourtwenty.yetanotherevilinsultgenerator.ui.insultinfo.InsultInfoDialog"
+        tools:layout="@layout/dialog_insult_info">
+        <argument
+            android:name="insult_json"
+            app:argType="string"/>
+    </dialog>
+
+</navigation>

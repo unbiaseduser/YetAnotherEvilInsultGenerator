@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXTableView?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/17.0.7" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sixtyninefourtwenty.yetanotherevilinsultgenerator.desktop.offline.OfflineView">
+   <children>
+      <MFXTableView fx:id="table" />
+   </children>
+</StackPane>

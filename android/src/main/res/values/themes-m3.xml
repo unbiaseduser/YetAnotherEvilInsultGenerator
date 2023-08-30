@@ -1,0 +1,5 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.YetAnotherEvilInsultGenerator.Material3" parent="AppTheme.Material3.DynamicColors">
+
+    </style>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kennyc.view.MultiStateView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/state_view"
+    app:msv_loadingView="@layout/loading_progress_bar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Dummy view so multistateview doesn't complain. -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</com.kennyc.view.MultiStateView>

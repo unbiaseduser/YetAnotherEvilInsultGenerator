@@ -1,0 +1,38 @@
+<resources>
+
+    <string-array name="generator_urls" translatable="false">
+        <item>@string/generator_url_main</item>
+        <item>@string/generator_url_backup</item>
+    </string-array>
+
+    <string-array name="generator_url_values" translatable="false">
+        <item>main</item>
+        <item>backup</item>
+    </string-array>
+
+    <string-array name="work_manager_constraints" translatable="false">
+        <item>@string/unmetered_network</item>
+        <item>@string/device_charging</item>
+        <item>@string/device_idle</item>
+        <item>@string/battery_not_low</item>
+        <item>@string/storage_not_low</item>
+    </string-array>
+
+    <string-array name="work_manager_constraints_values" translatable="false">
+        <item>unmetered_network</item>
+        <item>device_charging</item>
+        <item>device_idle</item>
+        <item>battery_not_low</item>
+        <item>storage_not_low</item>
+    </string-array>
+
+    <string-array name="update_intervals_values" translatable="false">
+        <item>1h</item>
+        <item>2h</item>
+        <item>3h</item>
+        <item>4h</item>
+        <item>6h</item>
+        <item>8h</item>
+    </string-array>
+
+</resources>

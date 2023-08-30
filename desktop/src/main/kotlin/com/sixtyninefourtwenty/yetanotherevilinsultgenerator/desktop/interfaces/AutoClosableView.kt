@@ -1,0 +1,3 @@
+package com.sixtyninefourtwenty.yetanotherevilinsultgenerator.desktop.interfaces
+
+interface AutoClosableView : AutoCloseable, View

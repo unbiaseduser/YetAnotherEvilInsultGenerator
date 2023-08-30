@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="root" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sixtyninefourtwenty.yetanotherevilinsultgenerator.desktop.generator.GeneratorContentView">
+   <Text fx:id="insult" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <VBox.margin>
+         <Insets bottom="40.0" />
+      </VBox.margin>
+   </Text>
+   <MFXButton fx:id="generate" buttonType="RAISED" />
+</VBox>

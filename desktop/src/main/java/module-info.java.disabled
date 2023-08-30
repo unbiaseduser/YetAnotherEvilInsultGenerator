@@ -1,0 +1,10 @@
+module com.sixtyninefourtwenty.yetanotherevilinsultgenerator.desktop {
+    requires javafx.controls;
+    requires javafx.fxml;
+    requires kotlin.stdlib;
+    requires com.sixtyninefourtwenty.yetanotherevilinsultgenerator.shared;
+    
+
+    opens com.sixtyninefourtwenty.yetanotherevilinsultgenerator.desktop to javafx.fxml;
+    exports com.sixtyninefourtwenty.yetanotherevilinsultgenerator.desktop;
+}
