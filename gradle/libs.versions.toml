@@ -19,12 +19,12 @@ desugar-jdk-libs = "2.0.3"
 multistateview = "2.2.0"
 preference-ktx = "1.2.1"
 flowlayout = "1.2.2"
-bottomsheetalertdialog = "8766e466af"
-materialspinner = "8766e466af"
-customactionmode = "8766e466af"
-basefragments = "8766e466af"
-theming = "8766e466af"
-custompreferences = "8766e466af"
+bottomsheetalertdialog = "1.0"
+materialspinner = "1.0"
+customactionmode = "1.0"
+basefragments = "1.0"
+theming = "1.0"
+custompreferences = "1.0"
 recyclerview = "1.3.1"
 recyclerview-selection = "1.1.0"
 work-runtime-ktx = "2.8.1"
@@ -54,12 +54,12 @@ desugar-jdk-libs = { group = "com.android.tools", name = "desugar_jdk_libs", ver
 multistateview = { group = "com.github.Kennyc1012", name = "MultiStateView", version.ref = "multistateview" }
 preference-ktx = { group = "androidx.preference", name = "preference-ktx", version.ref = "preference-ktx" }
 navigation-safeargs = { group = "androidx.navigation", name = "navigation-safe-args-gradle-plugin", version.ref = "navigation-safeargs" }
-bottomsheetalertdialog = { group = "com.github.unbiaseduser.misc-stuff", name = "bottom-sheet-alert-dialog", version.ref = "bottomsheetalertdialog" }
-materialspinner = { group = "com.github.unbiaseduser.misc-stuff", name = "material-spinner", version.ref = "materialspinner" }
-customactionmode = { group = "com.github.unbiaseduser.misc-stuff", name = "custom-action-mode", version.ref = "customactionmode" }
-basefragments = { group = "com.github.unbiaseduser.misc-stuff", name = "base-fragments", version.ref = "basefragments" }
-theming = { group = "com.github.unbiaseduser.misc-stuff", name = "theming", version.ref = "theming" }
-custompreferences = { group = "com.github.unbiaseduser.misc-stuff", name = "custom-preferences", version.ref = "custompreferences" }
+bottomsheetalertdialog = { group = "com.github.unbiaseduser", name = "bottom-sheet-alert-dialog", version.ref = "bottomsheetalertdialog" }
+materialspinner = { group = "com.github.unbiaseduser", name = "material-spinner", version.ref = "materialspinner" }
+customactionmode = { group = "com.github.unbiaseduser", name = "custom-action-mode", version.ref = "customactionmode" }
+basefragments = { group = "com.github.unbiaseduser", name = "base-fragments", version.ref = "basefragments" }
+theming = { group = "com.github.unbiaseduser", name = "theming", version.ref = "theming" }
+custompreferences = { group = "com.github.unbiaseduser", name = "custom-preferences", version.ref = "custompreferences" }
 recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
 recyclerview-selection = { group = "androidx.recyclerview", name = "recyclerview-selection", version.ref = "recyclerview-selection" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }

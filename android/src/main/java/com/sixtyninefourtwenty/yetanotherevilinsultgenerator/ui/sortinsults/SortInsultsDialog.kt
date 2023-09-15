@@ -7,6 +7,7 @@ import androidx.fragment.app.activityViewModels
 import com.sixtyninefourtwenty.bottomsheetalertdialog.BottomSheetAlertDialogFragmentViewBuilder
 import com.sixtyninefourtwenty.bottomsheetalertdialog.DialogButtonProperties
 import com.sixtyninefourtwenty.bottomsheetalertdialog.misc.BaseBottomSheetAlertDialogFragment
+import com.sixtyninefourtwenty.bottomsheetalertdialog.misc.createBottomSheetAlertDialog
 import com.sixtyninefourtwenty.yetanotherevilinsultgenerator.R
 import com.sixtyninefourtwenty.yetanotherevilinsultgenerator.databinding.DialogSortInsultsBinding
 import com.sixtyninefourtwenty.yetanotherevilinsultgenerator.shared.sortandfilter.InsultSortOptions
@@ -16,7 +17,7 @@ class SortInsultsDialog : BaseBottomSheetAlertDialogFragment<DialogSortInsultsBi
 
     private val offlineViewModel: OfflineViewModel by activityViewModels { OfflineViewModel.Factory }
 
-    override fun initBinding(
+    override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?
     ): DialogSortInsultsBinding {
@@ -24,9 +25,10 @@ class SortInsultsDialog : BaseBottomSheetAlertDialogFragment<DialogSortInsultsBi
     }
 
     override fun initDialog(binding: DialogSortInsultsBinding): BottomSheetAlertDialogFragmentViewBuilder {
-        return BottomSheetAlertDialogFragmentViewBuilder(binding.root, this)
-            .setTitle(R.string.sort_insults)
-            .setPositiveButton(DialogButtonProperties(
+        return createBottomSheetAlertDialog(
+            view = binding.root,
+            titleText = getString(R.string.sort_insults),
+            positiveButtonProperties = DialogButtonProperties(
                 textRes = android.R.string.ok,
                 listener = {
                     val isFavoriteFirst = binding.favoritesFirst.isChecked
@@ -37,12 +39,13 @@ class SortInsultsDialog : BaseBottomSheetAlertDialogFragment<DialogSortInsultsBi
                         else -> throw AssertionError("Unexpected checked chip id: ${binding.toggleGroup.checkedChipId}")
                     }
                 }
-            ))
-            .setNeutralButton(DialogButtonProperties(
+            ),
+            neutralButtonProperties = DialogButtonProperties(
                 textRes = R.string.reset,
                 listener = { offlineViewModel.insultSortOptions = null }
-            ))
-            .setNegativeButton(DialogButtonProperties(textRes = android.R.string.cancel))
+            ),
+            negativeButtonProperties = DialogButtonProperties(textRes = android.R.string.cancel)
+        )
     }
 
     override fun onViewCreated(binding: DialogSortInsultsBinding, savedInstanceState: Bundle?) {

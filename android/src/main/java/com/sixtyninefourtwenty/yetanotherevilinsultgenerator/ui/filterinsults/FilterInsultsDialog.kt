@@ -7,6 +7,7 @@ import androidx.fragment.app.activityViewModels
 import com.sixtyninefourtwenty.bottomsheetalertdialog.BottomSheetAlertDialogFragmentViewBuilder
 import com.sixtyninefourtwenty.bottomsheetalertdialog.DialogButtonProperties
 import com.sixtyninefourtwenty.bottomsheetalertdialog.misc.BaseBottomSheetAlertDialogFragment
+import com.sixtyninefourtwenty.bottomsheetalertdialog.misc.createBottomSheetAlertDialog
 import com.sixtyninefourtwenty.yetanotherevilinsultgenerator.R
 import com.sixtyninefourtwenty.yetanotherevilinsultgenerator.databinding.DialogFilterInsultsBinding
 import com.sixtyninefourtwenty.yetanotherevilinsultgenerator.shared.model.Language
@@ -21,7 +22,7 @@ class FilterInsultsDialog : BaseBottomSheetAlertDialogFragment<DialogFilterInsul
 
     private val offlineViewModel: OfflineViewModel by activityViewModels { OfflineViewModel.Factory }
 
-    override fun initBinding(
+    override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?
     ): DialogFilterInsultsBinding {
@@ -29,9 +30,10 @@ class FilterInsultsDialog : BaseBottomSheetAlertDialogFragment<DialogFilterInsul
     }
 
     override fun initDialog(binding: DialogFilterInsultsBinding): BottomSheetAlertDialogFragmentViewBuilder {
-        return BottomSheetAlertDialogFragmentViewBuilder(binding.root, this)
-            .setTitle(R.string.filter_insults)
-            .setPositiveButton(DialogButtonProperties(
+        return createBottomSheetAlertDialog(
+            view = binding.root,
+            titleText = getString(R.string.filter_insults),
+            positiveButtonProperties = DialogButtonProperties(
                 textRes = android.R.string.ok,
                 listener = {
                     offlineViewModel.insultFilterOptions = InsultFilterOptions(
@@ -41,12 +43,13 @@ class FilterInsultsDialog : BaseBottomSheetAlertDialogFragment<DialogFilterInsul
                         )
                     )
                 }
-            ))
-            .setNeutralButton(DialogButtonProperties(
+            ),
+            neutralButtonProperties = DialogButtonProperties(
                 textRes = R.string.reset,
                 listener = { offlineViewModel.insultFilterOptions = null }
-            ))
-            .setNegativeButton(DialogButtonProperties(textRes = android.R.string.cancel))
+            ),
+            negativeButtonProperties = DialogButtonProperties(textRes = android.R.string.cancel)
+        )
     }
 
     override fun onViewCreated(binding: DialogFilterInsultsBinding, savedInstanceState: Bundle?) {

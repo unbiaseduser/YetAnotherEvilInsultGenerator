@@ -4,14 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.widget.Toast
-import androidx.core.app.NotificationChannelCompat
-import androidx.core.app.NotificationManagerCompat
 import androidx.core.net.toUri
 import androidx.navigation.fragment.findNavController
 import androidx.preference.*
 import androidx.work.WorkManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.sixtyninefourtwenty.custompreferences.AbstractCustomDialogPreference
+import com.sixtyninefourtwenty.custompreferences.PreferenceFragmentCompatAccommodateCustomDialogPreferences
 import com.sixtyninefourtwenty.custompreferences.TimePickerPreference
 import com.sixtyninefourtwenty.yetanotherevilinsultgenerator.R
 import com.sixtyninefourtwenty.yetanotherevilinsultgenerator.data.PeriodicInsultUpdatesWorker
@@ -22,7 +20,7 @@ import com.sixtyninefourtwenty.yetanotherevilinsultgenerator.shared.model.Langua
 import com.sixtyninefourtwenty.yetanotherevilinsultgenerator.utils.*
 import java.time.LocalTime
 
-class SettingsFragment : PreferenceFragmentCompat() {
+class SettingsFragment : PreferenceFragmentCompatAccommodateCustomDialogPreferences() {
 
     private lateinit var prefs: PreferencesRepository
 
@@ -181,14 +179,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
                 )
                 true
             }
-        }
-    }
-
-    override fun onDisplayPreferenceDialog(preference: Preference) {
-        if (preference is AbstractCustomDialogPreference) {
-            preference.displayDialog(this)
-        } else {
-            super.onDisplayPreferenceDialog(preference)
         }
     }
 

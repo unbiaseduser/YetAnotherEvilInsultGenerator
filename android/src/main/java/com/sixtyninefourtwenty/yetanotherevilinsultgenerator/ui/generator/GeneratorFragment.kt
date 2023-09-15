@@ -37,7 +37,7 @@ class GeneratorFragment : BaseFragment<FragmentGeneratorBinding>() {
     private var _errorBinding: FragmentGeneratorStateErrorBinding? = null
     private val errorBinding get() = _errorBinding!!
 
-    override fun initBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentGeneratorBinding {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?): FragmentGeneratorBinding {
         return FragmentGeneratorBinding.inflate(inflater, container, false)
     }
 

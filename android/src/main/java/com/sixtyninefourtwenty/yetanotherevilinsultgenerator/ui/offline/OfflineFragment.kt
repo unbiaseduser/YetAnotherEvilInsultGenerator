@@ -54,7 +54,7 @@ class OfflineFragment : BaseFragment<FragmentOfflineBinding>() {
 
     }
 
-    override fun initBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentOfflineBinding {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?): FragmentOfflineBinding {
         return FragmentOfflineBinding.inflate(inflater, container, false)
     }
 

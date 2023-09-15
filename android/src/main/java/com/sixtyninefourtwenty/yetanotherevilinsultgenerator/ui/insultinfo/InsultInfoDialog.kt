@@ -16,6 +16,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.sixtyninefourtwenty.bottomsheetalertdialog.BottomSheetAlertDialogFragmentViewBuilder
 import com.sixtyninefourtwenty.bottomsheetalertdialog.DialogButtonProperties
 import com.sixtyninefourtwenty.bottomsheetalertdialog.misc.BaseBottomSheetAlertDialogFragment
+import com.sixtyninefourtwenty.bottomsheetalertdialog.misc.createBottomSheetAlertDialog
 import com.sixtyninefourtwenty.yetanotherevilinsultgenerator.R
 import com.sixtyninefourtwenty.yetanotherevilinsultgenerator.databinding.DialogInsultInfoBinding
 import com.sixtyninefourtwenty.yetanotherevilinsultgenerator.shared.model.Insult
@@ -54,7 +55,7 @@ class InsultInfoDialog : BaseBottomSheetAlertDialogFragment<DialogInsultInfoBind
             .show()
     }
     
-    override fun initBinding(
+    override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?
     ): DialogInsultInfoBinding {
@@ -62,9 +63,11 @@ class InsultInfoDialog : BaseBottomSheetAlertDialogFragment<DialogInsultInfoBind
     }
 
     override fun initDialog(binding: DialogInsultInfoBinding): BottomSheetAlertDialogFragmentViewBuilder {
-        return BottomSheetAlertDialogFragmentViewBuilder(binding.root, this)
-            .setTitle(R.string.insult_info)
-            .setPositiveButton(DialogButtonProperties(textRes = android.R.string.ok))
+        return createBottomSheetAlertDialog(
+            view = binding.root,
+            titleText = getString(R.string.insult_info),
+            positiveButtonProperties = DialogButtonProperties(textRes = android.R.string.ok)
+        )
     }
 
     override fun onViewCreated(binding: DialogInsultInfoBinding, savedInstanceState: Bundle?) {
