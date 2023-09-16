@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     id("androidx.navigation.safeargs.kotlin")
     id("kotlin-parcelize")
+    alias(libs.plugins.androidJunit5)
 }
 
 android {
@@ -20,6 +21,7 @@ android {
         setProperty("archivesBaseName", "Yet Another Evil Insult Generator v$versionName")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunnerArguments["runnerBuilder"] = "de.mannodermaus.junit5.AndroidJUnit5Builder"
     }
 
     buildTypes {
@@ -70,7 +72,17 @@ dependencies {
     implementation(libs.theming)
     implementation(libs.custompreferences)
     coreLibraryDesugaring(libs.desugar.jdk.libs)
+    testImplementation(libs.androidx.test.ext.junit)
     testImplementation(libs.junit)
+    testImplementation(libs.junit.jupiter.api)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testRuntimeOnly(libs.junit.vintage.engine)
+    testImplementation(libs.robolectric)
+    androidTestImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    androidTestImplementation(libs.junit.jupiter.api)
+    androidTestRuntimeOnly(libs.junit.jupiter.engine)
+    androidTestImplementation(libs.android.junit5.test.core)
+    androidTestRuntimeOnly(libs.android.junit5.test.runner)
 }
